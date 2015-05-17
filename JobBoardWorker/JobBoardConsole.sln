@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Console", "JobBoardConsole\JobBoard.Console.csproj", "{A87F637A-DAF0-492C-A1AF-9D056DE1F3D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Models", "JobBoardModels\JobBoard.Models.csproj", "{8084CC41-0198-42C8-B0DB-9EC1DD1E5AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Parsers", "JobBoard.Parsers\JobBoard.Parsers.csproj", "{89975480-B55D-4391-BAF1-CCFEF71CF2B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A87F637A-DAF0-492C-A1AF-9D056DE1F3D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87F637A-DAF0-492C-A1AF-9D056DE1F3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87F637A-DAF0-492C-A1AF-9D056DE1F3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87F637A-DAF0-492C-A1AF-9D056DE1F3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8084CC41-0198-42C8-B0DB-9EC1DD1E5AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8084CC41-0198-42C8-B0DB-9EC1DD1E5AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8084CC41-0198-42C8-B0DB-9EC1DD1E5AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8084CC41-0198-42C8-B0DB-9EC1DD1E5AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89975480-B55D-4391-BAF1-CCFEF71CF2B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89975480-B55D-4391-BAF1-CCFEF71CF2B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89975480-B55D-4391-BAF1-CCFEF71CF2B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89975480-B55D-4391-BAF1-CCFEF71CF2B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

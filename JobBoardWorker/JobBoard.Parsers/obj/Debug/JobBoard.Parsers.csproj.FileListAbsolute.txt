@@ -1,0 +1,12 @@
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\JobBoard.Parsers.dll
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\JobBoard.Parsers.pdb
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\HtmlAgilityPack.dll
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\JobBoard.Models.dll
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\EntityFramework.dll
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\JobBoard.Models.pdb
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\HtmlAgilityPack.pdb
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\HtmlAgilityPack.xml
+C:\dev\JobBoardConsole\JobBoard.Parsers\bin\Debug\EntityFramework.xml
+C:\dev\JobBoardConsole\JobBoard.Parsers\obj\Debug\JobBoard.Parsers.csprojResolveAssemblyReference.cache
+C:\dev\JobBoardConsole\JobBoard.Parsers\obj\Debug\JobBoard.Parsers.dll
+C:\dev\JobBoardConsole\JobBoard.Parsers\obj\Debug\JobBoard.Parsers.pdb

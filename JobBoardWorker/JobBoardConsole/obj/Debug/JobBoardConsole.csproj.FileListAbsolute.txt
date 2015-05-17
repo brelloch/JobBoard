@@ -1,0 +1,12 @@
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\JobBoardConsole.exe.config
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\JobBoardConsole.exe
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\JobBoardConsole.pdb
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\EntityFramework.dll
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\EntityFramework.SqlServer.dll
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\JobBoardModels.dll
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\JobBoardModels.pdb
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\EntityFramework.xml
+C:\dev\JobBoardConsole\JobBoardConsole\bin\Debug\EntityFramework.SqlServer.xml
+C:\dev\JobBoardConsole\JobBoardConsole\obj\Debug\JobBoardConsole.csprojResolveAssemblyReference.cache
+C:\dev\JobBoardConsole\JobBoardConsole\obj\Debug\JobBoardConsole.exe
+C:\dev\JobBoardConsole\JobBoardConsole\obj\Debug\JobBoardConsole.pdb
