@@ -13,8 +13,8 @@ namespace JobBoard.Models
         public string Description { get; set; }
         public string Url { get; set; }
         public string Location { get; set; }
+        public string CompanyName { get; set; }
 
-        public int CompanyId { get; set; }
         public virtual Company Company { get; set; }
     }
 }

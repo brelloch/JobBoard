@@ -51,6 +51,9 @@
     <Compile Include="Company.cs" />
     <Compile Include="JobBoardContext.cs" />
     <Compile Include="Job.cs" />
+    <Compile Include="Jobvite\JobviteDetail.cs" />
+    <Compile Include="Jobvite\JobviteResult.cs" />
+    <Compile Include="Jobvite\JobviteBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using JobBoard.Models;
 using JobBoard.Parsers;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace JobBoardConsole
 {
@@ -15,38 +19,66 @@ namespace JobBoardConsole
         {
             using (var db = new JobBoardContext())
             {
-                //// Create and save a new Blog 
-                //Console.Write("Enter a name for a new Blog: ");
-                //var name = Console.ReadLine();
-                //
-                //var company = new Company { Name = name };
-                //db.Companies.Add(company);
-                //db.SaveChanges();
-
                 List<Job> alljobs = new List<Job>();
 
-                //// Display all Blogs from the database 
-                //var query = from b in db.Companies
-                //            orderby b.Name
-                //            select b;
-                //
-                //Console.WriteLine("All blogs in the database:");
-                //foreach (var item in query)
-                //{
-                //    if (item.Type == JobBoardType.TheResumator)
-                //    {
-                //        var task = TheResumatorBoardParser.Parse(item.CompanyId, item.Url);
-                //        task.Wait();
-                //        var jobs = task.Result;
-                //        alljobs.AddRange(jobs);
-                //    }
-                //    Console.WriteLine(item.Name);
-                //}
+                ///////////// Resumator
+                var query = from b in db.Companies
+                            orderby b.Name
+                            select b;
+                
+                foreach (var item in query)
+                {
+                    if (item.Type == JobBoardType.TheResumator)
+                    {
+                        var task = TheResumatorBoardParser.Parse(item.Name, item.Url);
+                        task.Wait();
+                        var jobs = task.Result;
+                        alljobs.AddRange(jobs);
+                    }
+                    Console.WriteLine(item.Name);
+                }
 
                 foreach (var job in alljobs) {
                     db.Jobs.Add(job);
                 }
                 db.SaveChanges();
+
+                /////////////// Jobvite
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://search.jobvite.com/api/jobsearch?limit=" + 1 + "&start=" + 0);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var responseTask = client.GetAsync("");
+                    responseTask.Wait();
+                    HttpResponseMessage response = responseTask.Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var contentTask = response.Content.ReadAsStringAsync();
+                        contentTask.Wait();
+                        var content = contentTask.Result.Replace("\r\n", "");
+                        var totalJobs = int.Parse(Newtonsoft.Json.JsonConvert.DeserializeObject<JobviteBase>(content).totalResults);
+                        totalJobs = 10;
+                        //int pageSize = 100;
+                        int pageSize = 10;
+
+                        for (int i = 0; (i-1 * pageSize) < totalJobs; i++)
+                        {
+                            var task = JobviteParser.Parse(i*pageSize, pageSize);
+                            task.Wait();
+                            var jobs = task.Result;
+
+                            foreach (var job in jobs)
+                            {
+                                db.Jobs.Add(job);
+                            }
+                            db.SaveChanges();
+
+                        }
+                    }
+                }
 
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();

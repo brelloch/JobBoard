@@ -13,17 +13,10 @@ namespace JobBoard.Parsers
 {
     public static class TheResumatorBoardParser
     {
-        //public TheResumatorBoardParser(string url)
-        //{
-        //    this.Url = url;
-        //}
-        //
-        //public string Url { get; private set; }
-        //
-        public static async Task<List<Job>> Parse(int companyId, string url)
+        public static async Task<List<Job>> Parse(string companyName, string url)
         {
             List<Job> jobs = new List<Job>();
-            Job job = new Job() { CompanyId = companyId };
+            Job job = new Job() { CompanyName = companyName };
 
             HttpClient http = new HttpClient();
             var response = await http.GetByteArrayAsync(url);
@@ -38,7 +31,7 @@ namespace JobBoard.Parsers
             {
                 if (jobli.Name == "li")
                 {
-                    job = new Job() { CompanyId = companyId };
+                    job = new Job() { CompanyName = companyName };
                 }
                 else if (jobli.Name == "h4")
                 {
