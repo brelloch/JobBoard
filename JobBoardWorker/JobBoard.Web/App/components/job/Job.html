@@ -1,0 +1,17 @@
+﻿<h4 ng-show="loaded === true && jobs.length === 0">It looks like no jobs have been added yet.</h4>
+
+<input style="width: 500px;" ng-bind="searchTerms"/>
+<table ng-show="loaded === true && jobs.length > 0" ng-table="tableParams" class="table">
+    <tr ng-repeat="job in $data">
+        <td data-title="'Title'" sortable="'Title'">
+            {{job.Title}}
+        </td>
+        <td data-title="'Description'">
+            {{job.Description}}
+        </td>
+        <td data-title="'Location'" sortable="'Location'">
+            {{job.Location}}
+        </td>
+
+    </tr>
+</table>

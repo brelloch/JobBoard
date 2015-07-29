@@ -22,14 +22,14 @@ namespace SearchTool
             int page = 0;
             List<string> urls = new List<string>();
 
-            string startDate = DateTime.UtcNow.AddDays(-90).ToString("yyyyMMdd");
+            string startDate = DateTime.UtcNow.AddDays(-60).ToString("yyyyMMd");
             //string startDate = (DateTime.UtcNow.Year.ToString() + sMonth + sday);
-            string endDate = DateTime.UtcNow.AddDays(-60).ToString("yyyyMMdd");
-            listRequest.DateRestrict = "w10";
+            string endDate = DateTime.UtcNow.AddDays(-30).ToString("yyyyMMdd");
+            listRequest.Sort = "review-date:r:" +startDate + ":" + endDate;
 
             try
             {
-                while (page < 10)
+                while (page < 1)
                 {
                     listRequest.Num = 10;
                     listRequest.Start = page * listRequest.Num;
@@ -54,7 +54,7 @@ namespace SearchTool
                 var test = ex.Message;
             }
 
-            System.IO.File.WriteAllLines(@"C:\urlsa.txt", urls.Distinct().ToArray());
+            System.IO.File.WriteAllLines(@"C:\urls.txt", urls.Distinct().ToArray());
 
             Console.WriteLine("done");
         }

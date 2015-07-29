@@ -1,0 +1,31 @@
+﻿<h2>Customer</h2>
+
+<div>
+    <form name="userForm" ng-submit="createCustomer(customer)" novalidate>
+        <div class="form-group">
+            <label>First Name (Required)</label>
+            <input type="text" name="name" class="form-control" ng-model="customer.FirstName" required>
+        </div>
+        <div class="form-group">
+            <label>Last Name (Required)</label>
+            <input type="text" name="name" class="form-control" ng-model="customer.LastName" required>
+        </div>
+        <div class="form-group">
+            <label>Address 1 (Required)</label>
+            <input type="text" name="name" class="form-control" ng-model="customer.Address1" required>
+        </div>
+        <div class="form-group">
+            <label>Address 2</label>
+            <input type="text" name="name" class="form-control" ng-model="customer.Address2">
+        </div>
+        <div class="form-group">
+            <label>Zip (Required)</label>
+            <input type="text" name="name" class="form-control" ng-model="customer.Zip" required ng-minlength="5" ng-maxlength="5" mask data-mask="99999">
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" name="name" class="form-control" ng-model="customer.Phone" mask data-mask="(999) 999-9999? x99999">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+    </form>
+</div>

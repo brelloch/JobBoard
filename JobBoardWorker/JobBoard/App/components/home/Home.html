@@ -1,0 +1,72 @@
+﻿<h3>About this project</h3>
+<p>
+    I decided to use AngularJS for the front end after debating between using React.js, knockout.js and AngularJS. I do not have experience with React.js but have been interested in learning it for use in isomorphic javascript projects. Unfortunately I was concerned the learning curve would be a little steep to try to tackle it in a reasonable amount of time so it was excluded. That left knockout.js which is what I have the most experience with and AngularJS which is what I have been using for projects at home. I ended up going with AngularJS due to the job posting mentioning it.
+</p>
+<p>
+    After deciding on AngularJS I needed to figure out how I wanted to handle dependencies, compile Less and minify. My problem was that most of my angular experience is from using node.js and the MEAN stack where npm, bower and grunt are the tools that are most commonly used. I initially started down this route and got all 3 of those tools running in Visual Studio using instructions from Scott Hanselman’s blog, but after working with that for a little bit I decided the whole thing felt clunky and that using the built in Visual Studio tools made more sense. I then switched over to using Web Essentials for compiling Less and bundles for minification.
+</p>
+<p>
+    The next AngularJS task was to decide on how to structure the app. In the past I have often grouped all files together by type. After reading some discussion online it seems like there has been a trend towards grouping by task. What this means is in this project instead of grouping all controllers in one folder and services in another I have grouped all customer related things together.
+</p>
+<p>
+    The final task on the AngularJS side of things was to figure out how to test. I have never tested javascript in the past so this was one of the more time consuming things for me. I went with Jasmine which can be reached by going to /Jasmine while in debug mode. When in release mode the route does not exist.
+</p>
+<p>
+    On the database side I decided to go with RavenDB because it has great .NET support and I have really enjoyed working with it over the last couple years. I also really like that the recommended way to test with RavenDB is to use an embedded database instead of mocking the calls. I went with RavenDB over MongoDB because I was a little concerned about the LINQ provider for MongoDB after talking to Sean during the interview. Using Entity Framework wasn’t considered because I don’t have SQL Server installed on my computer so starting with RavenDB was faster.
+</p>
+<p>
+    The middle layer makes use of Web API and Autofac for communication between the database and client. I decided to use Autofac because that is what I have been using for dependency injection at my current position. Although a project of this size doesn’t really need dependency injection I wanted to follow best practices.
+</p>
+<p>
+    To test everything on the .NET side I am using the Microsoft Unit Test Framework. I have used xUnit in the past and was curious what a different testing framework would look like.
+</p>
+<p>
+    In total I think I spent around 12 hours on this project with about half of that time being spent researching AngularJS app structure and testing AngularJS apps.
+</p>
+<h3>
+    Areas that could be improved
+</h3>
+<ul>
+    <li>
+        Add filtering and searching to main customers page.
+    </li>
+    <li>
+        Add pagination to the backend of the customers. Right now up to 1000 customers (RavenDB limit) will be returned when the page loads, however the client would slow to unacceptable levels well before 1000 customers would be reached.
+    </li>
+    <li>
+        I should have used a modal for adding and modifying customers instead of a separate page.
+    </li>
+    <li>
+        If this was going to be used anywhere I would need to enter a key for google’s API.
+    </li>
+</ul>
+
+<h3>
+    Technologies used
+</h3>
+<ul>
+    <li>
+        AngularJS along with a few libraries like ng-table and jquery.maskedinput
+    </li>
+    <li>
+        Jasmine to test AngularJS code
+    </li>
+    <li>
+        Twitter Bootstrap for UI
+    </li>
+    <li>
+        Less - Using Web Essentials for compilation
+    </li>
+    <li>
+        ASP.NET MVC for initial view and Web API
+    </li>
+    <li>
+        RavenDB for database
+    </li>
+    <li>
+        Autofac for dependency injection
+    </li>
+    <li>
+        Microsoft Unit Test Framework
+    </li>
+</ul>

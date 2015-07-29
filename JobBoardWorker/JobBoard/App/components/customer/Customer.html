@@ -1,0 +1,45 @@
+﻿<h2>Customers<button ng-click="goToCreateModify()" class="btn btn-default pull-right">Create Customer</button></h2>
+
+<h4 ng-show="loaded === true && customers.length === 0">It looks like no customers have been added yet.</h4>
+
+<table ng-show="loaded === true && customers.length > 0" ng-table="tableParams" class="table">
+    <tr ng-repeat="customer in $data">
+        <td data-title="'First Name'" sortable="'FirstName'">
+            {{customer.FirstName}}
+        </td>
+        <td data-title="'Last Name'" sortable="'LastName'">
+            {{customer.LastName}}
+        </td>
+        <td data-title="'Address 1'" sortable="'Address1'">
+            {{customer.Address1}}
+        </td>
+        <td data-title="'Address 2'" sortable="'Address2'">
+            {{customer.Address2}}
+        </td>
+        <td data-title="'City'" sortable="'City'">
+            {{customer.City}}
+        </td>
+        <td data-title="'State'" sortable="'State'">
+            {{customer.State}}
+        </td>
+        <td data-title="'Zip'" sortable="'Zip'">
+            {{customer.Zip}}
+        </td>
+        <td data-title="'Phone'" sortable="'Phone'">
+            {{customer.Phone}}
+        </td>
+        <td data-title="'Latitude'" sortable="'Latitude'">
+            {{customer.Latitude}}
+        </td>
+        <td data-title="'Longitude'" sortable="'Longitude'">
+            {{customer.Longitude}}
+        </td>
+        <td data-title="'Modify'">
+            <button ng-click="goToCreateModify(customer)" class="btn btn-sm">Modify</button>
+        </td>
+        <td data-title="'Delete'">
+            <button ng-click="deleteCustomer(customer.Id)" class="btn btn-sm">Delete</button>
+        </td>
+
+    </tr>
+</table>
